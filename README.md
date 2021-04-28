@@ -4,7 +4,7 @@
 The following application is for the user who needs a forecast of the upcoming week. Upon initial load the user will will be presented with an input field in which they can type in a city. Once the user types the city and clicks search they will recieve the weather forcast for today and the following 5 days. The weather for the current day will be presented on the main section of the application. The user will be ablle to see the city name they searched for, the current date, temperature, wind speed, humidity, and a weather icon. Belew the current weather the user will see 5 blue cards that display the weather for the upcoming 5 days. This includes the date, weather icon, temperature, hi/lo, and humidity. If the user decides to search for a different city the current data on the screen will be replaced with the new city they search for.
         
 ### Deployed Link    
-Insert the deployed link here.
+https://ashquinn.github.io/weather_app1/
         
 ## User Story
 
