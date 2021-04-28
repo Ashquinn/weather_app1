@@ -30,6 +30,8 @@ WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 ```
         
-## Demo        
-(assets/images/weather_app1.png)
-(assets/images/weather_app2.png)
+## Demo
+```md
+![Image1](assets/images/weather_app1.png)
+![Image2](assets/images/weather_app2.png)          
+```
