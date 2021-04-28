@@ -19,18 +19,20 @@ function getWeatherData(e){
         let todayTemp = document.createElement('p');
         let todayHumidity = document.createElement('p');
         let todayWind = document.createElement('p');
+        let weatherIcon = document.createElement('img')
 
-        currentCity.textContent = `${cityName}`
+        currentCity.textContent = `${cityName} (${moment(data.list[0].dt_txt).format('MMM Do, YYYY')})`;
         todayTemp.textContent = `Temp: ${data.list[0].main.temp} ˚F`
         todayHumidity.textContent = `Humidity: ${data.list[0].main.humidity}%`
         todayWind.textContent = `Wind speed: ${data.list[0].wind.speed} MPH`
-        //weatherIcon.textContent = data.list[i+1].main.temp;
+        weatherIcon.setAttribute('src', "https://openweathermap.org/img/w/" + data.list[0].weather[0].icon + ".png")
 
         todayContainer.textContent = '';
         todayContainer.appendChild(currentCity);
         todayContainer.appendChild(todayTemp);
         todayContainer.appendChild(todayHumidity);
         todayContainer.appendChild(todayWind);
+        todayContainer.appendChild(weatherIcon)
 
         cardDeck.innerHTML = '';
 
@@ -38,32 +40,27 @@ function getWeatherData(e){
         for (let i = 3; i <= data.list.length ; i+=8) {
         
         
-        //Create a conditional to only allow function to run if input is a number
-        // let forecast = document.createElement('h2')
         let weatherCards = document.createElement('div')
         let cardBody = document.createElement('div')
+        let forecastIcon = document.createElement('img')
         let currentTemp = document.createElement('p')
         let tempHiLo = document.createElement('p')
         let humidity = document.createElement('p')
         let date = document.createElement('h5')
         let weatherIcon = document.createElement('p'); 
 
-        // forecast.textContent = '5 Day Forecast:'
+        date.textContent = `(${moment(data.list[i].dt_txt).format('MMM Do, YYYY')})`
+        forecastIcon.setAttribute('src', "https://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png")
         currentTemp.textContent = `Temp: ${data.list[i].main.temp} ˚F`
-        console.log(data.list[i].dt_txt)
         tempHiLo.textContent = `Temp Hi-Lo: ${data.list[i].main.temp_max}˚F/${data.list[i].main.temp_min}˚F`;
         humidity.textContent = `Humidity: ${data.list[i].main.humidity}%`
-        date.textContent = data.list[i].main.temp;
         weatherIcon.textContent = data.list[i].main.temp;
 
-        // mainWeatherContainer.appendChild(forecast)
-        //Check if you can get the 5 day forecast text to render properly
-
-        //cardBody.appendChild(date);
+        cardBody.appendChild(date);
+        cardBody.appendChild(forecastIcon);
         cardBody.appendChild(currentTemp);
         cardBody.appendChild(tempHiLo);
         cardBody.appendChild(humidity);
-        //cardBody.appendChild(weatherIcon);
         cardBody.setAttribute('class', 'card-body text-white bg-primary rounded');
 
         weatherCards.appendChild(cardBody);
@@ -85,5 +82,6 @@ function displaySearch() {
         console.log(savedCities[i])
     }
 }
+
 displaySearch()
 searchBtn.addEventListener("click", getWeatherData);
