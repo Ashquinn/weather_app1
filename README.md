@@ -31,7 +31,5 @@ THEN I am again presented with current and future conditions for that city
 ```
         
 ## Demo        
-    ```md
-    ![weather_app_image1](assets/images/weather_app1.png)
-    ![weather_app_image2](assets/images/weather_app2.png)
-    ```
+(assets/images/weather_app1.png)
+(assets/images/weather_app2.png)
